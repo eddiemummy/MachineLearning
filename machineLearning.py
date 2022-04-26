@@ -2,6 +2,7 @@ def get_model(X,y,test_size,models=None):
     if not isinstance(models,list):
         raise TypeError("Model must be in a list format")
     # split data into train, validation and test
+    from sklearn.model_selection import train_test_split
     x_new,x_test,y_new,y_test = train_test_split(X,y,test_size=test_size,random_state=0)
     x_train,x_dev,y_train,y_dev = train_test_split(x_new,y_new,test_size=test_size,random_state=0)
     ####
